@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>°˖✧◝(⁰▿⁰)◜✧˖°</title>
+  <style>
+    #runaway-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="runaway-box">
+    <button>ㅇㅇㅇ 바보 ✦‿✦</button>
+  </div>
+  <script>
+    const box = document.getElementById('runaway-box')
+    let clickCount = 0
+
+    // mouse enter event
+    box.addEventListener('mouseenter', () => {
+      alertMessage(clickCount)
+
+      // to response to browser size changes
+      const maxX = window.innerWidth - box.offsetWidth
+      const maxY = window.innerHeight - box.offsetHeight
+
+      // get random values
+      const randomX = Math.floor(Math.random() * maxX)
+      const randomY = Math.floor(Math.random() * maxY)
+
+      // move location
+      box.style.left = randomX + 'px'
+      box.style.top = randomY + 'px'
+
+      ++clickCount
+    })
+
+    function alertMessage(count) {
+      if (count == 8) {
+        alert("message_1 ₍₍ (ง ˙ω˙)ว ⁾⁾")
+      } else if (count == 12) {
+        alert('message_2 ◟( ˘ ³˘)◞')
+      } else if (count == 16) {
+        alert("message_3 ᕕ( ᐛ )ᕗ")
+        alert("message_4 (๑˃̵ᴗ˂̵)و ♡")
+        // box.style.display = "none"
+        window.close()
+      }
+    }
+  </script>
+</body>
+
+</html>
